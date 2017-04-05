@@ -13,57 +13,59 @@ class ViewController: UIViewController {
    
     @IBOutlet weak var display: UILabel!
     var userlslnTheMiddleOfTypingANumber:Bool=false
-
-    @IBAction func operate(_ sender: UIButton) {
-        let operation = sender.currentTitle!
-        if userlslnTheMiddleOfTypingANumber{
-            enter()
-        }
-        switch operation {
-        case "×":perfomOperation(operation: {(op1:Double,op2:Double)->Double in
-            return op1 * op2
-        })
-        case "÷":perfomOperation(operation: {(op1:Double,op2:Double)->Double in
-            return op2 / op1})
-        case "+":perfomOperation(operation: {(op1:Double,op2:Double)->Double in
-            return op1 + op2})
-        case "−":perfomOperation(operation: {(op1:Double,op2:Double)->Double in
-            return op1 - op2})
-        default:
-            break
-        }
-    }
-    func perfomOperation(operation:(Double,Double)->Double){
-        if operandStack.count>=2 {
-            displayValue = operation(operandStack.removeLast(),operandStack.removeLast())
-            enter()
-    }
-    }
+    
+    var brain = JiSuanQi()
+    
     @IBAction func appendDight(_ sender: UIButton) {
         let dight = sender.currentTitle!
+
         if userlslnTheMiddleOfTypingANumber{
             display.text=display.text!+dight
+            
         }else{
             display.text=dight
             userlslnTheMiddleOfTypingANumber=true
         }
-    }
+    
+        }
+    
+    @IBAction func operate(_ sender: UIButton) {
+        if userlslnTheMiddleOfTypingANumber
+        {
+            enter()
+        }
+        if let operation = sender.currentTitle{
+        
+            if let result = brain.ZhiXingYunSuan(symbol: operation)
+            {
+                displayValue = result
+            }else
+            {
+                displayValue = 0
+            }
+        }
+}
     var operandStack = Array<Double>()
     @IBAction func enter() {
         userlslnTheMiddleOfTypingANumber=false
-        operandStack.append(displayValue)
-        print("operandStack=\(operandStack)")
+        if let result = brain.pushOperand(operand: displayValue)
+        {
+           displayValue=result
+        }else {
+        displayValue = 0
+        }
+       
      
     }
     var displayValue:Double{
         get {
             return NumberFormatter().number(from: display.text!)!.doubleValue
-    }
+            }
         set {
             display.text="\(newValue)"
-            userlslnTheMiddleOfTypingANumber = false
-        }
+          
+            }
         
-}
+    }
 
 }

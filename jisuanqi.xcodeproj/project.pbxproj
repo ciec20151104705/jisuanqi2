@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0D37B8E31E82199C00112FA3 /* JiSuanQi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D37B8E21E82199C00112FA3 /* JiSuanQi.swift */; };
 		0DE320281E7821B1007F001F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DE320271E7821B1007F001F /* AppDelegate.swift */; };
 		0DE3202A1E7821B1007F001F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DE320291E7821B1007F001F /* ViewController.swift */; };
 		0DE3202D1E7821B1007F001F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0DE3202B1E7821B1007F001F /* Main.storyboard */; };
@@ -34,6 +35,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0D37B8E21E82199C00112FA3 /* JiSuanQi.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = JiSuanQi.swift; path = jisuanqi/JiSuanQi.swift; sourceTree = "<group>"; };
 		0DE320241E7821B1007F001F /* jisuanqi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = jisuanqi.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0DE320271E7821B1007F001F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0DE320291E7821B1007F001F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -77,6 +79,7 @@
 		0DE3201B1E7821B0007F001F = {
 			isa = PBXGroup;
 			children = (
+				0D37B8E21E82199C00112FA3 /* JiSuanQi.swift */,
 				0DE320261E7821B1007F001F /* jisuanqi */,
 				0DE3203B1E7821B1007F001F /* jisuanqiTests */,
 				0DE320461E7821B1007F001F /* jisuanqiUITests */,
@@ -260,6 +263,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0DE3202A1E7821B1007F001F /* ViewController.swift in Sources */,
+				0D37B8E31E82199C00112FA3 /* JiSuanQi.swift in Sources */,
 				0DE320281E7821B1007F001F /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -505,6 +509,7 @@
 				0DE3204E1E7821B1007F001F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		0DE3204F1E7821B1007F001F /* Build configuration list for PBXNativeTarget "jisuanqiTests" */ = {
 			isa = XCConfigurationList;
@@ -513,6 +518,7 @@
 				0DE320511E7821B1007F001F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		0DE320521E7821B1007F001F /* Build configuration list for PBXNativeTarget "jisuanqiUITests" */ = {
 			isa = XCConfigurationList;
@@ -521,6 +527,7 @@
 				0DE320541E7821B1007F001F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
