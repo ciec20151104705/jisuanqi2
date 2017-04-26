@@ -9,11 +9,12 @@
 import Foundation
 class JiSuanQi
 {
+    //用enum（枚举）类型,当你的某样东西在某种情况下是一个值，在另一情况下是另一个值，但是不可能同时拥有这两个值的时候，
     private enum Op : CustomStringConvertible{
-        case Operand(Double)
-        case UnaryOperation(String,(Double) ->Double)
-        case BinaryOperation(String,(Double,Double)->Double)
-        
+        case Operand(Double)//操作数
+        case UnaryOperation(String,(Double) ->Double)//运算符
+        case BinaryOperation(String,(Double,Double)->Double)//二元运算
+        //Swift有个非常酷的特性，你可以将数据与枚举中的case关联起来
         var description:String{
             get {
                 switch self {
