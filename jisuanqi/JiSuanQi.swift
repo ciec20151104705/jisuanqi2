@@ -32,7 +32,7 @@ class JiSuanQi
     
     private var knownOps = Dictionary<String,Op>()
     
-    init ()
+    init ()//类初始化的时候必需保证类的所有属性都被初始化，我们使用init这个方法来初始化一个类
     {
         func learnOps(op:Op)
         {
@@ -50,6 +50,7 @@ class JiSuanQi
         {
             var ramainingOps = ops
             let op = ramainingOps.removeLast()
+            //用开关语句来判断得到的栈顶Op
             switch op {
             case.Operand(let operand ):
                 return(operand,ramainingOps)
@@ -74,8 +75,8 @@ class JiSuanQi
           
         }
         return (nil,ops )
-    }
-    func evaluate()->Double?
+    }//标准的递归
+    func evaluate()->Double?//如果栈中的元素不能进行运算那么结果会返回一个nil。
     {
         let (result,_) = evaluate(ops: opStack)
         print("\(opStack) = \(result) with \(remainder) left over ")
